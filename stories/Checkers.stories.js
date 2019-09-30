@@ -27,6 +27,7 @@ class Board extends React.Component {
 
   render() {
     const spaceSize = this.props.size / 8;
+    const pieceRadius = spaceSize / 2;
 
     return (
       <svg
@@ -36,11 +37,12 @@ class Board extends React.Component {
       >
         {this.state.board.map((row, y) => {
           const isEvenRow = y % 2;
+          const spaceY = spaceSize * y;
+
           return row.map((space, x) => {
             const isEvenSpace = x % 2;
             const spaceX = spaceSize * x;
-            const spaceY = spaceSize * y;
-            const pieceRadius = spaceSize / 2;
+
             return (
               <Space
                 key={x}
