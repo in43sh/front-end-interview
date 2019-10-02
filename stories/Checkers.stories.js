@@ -62,13 +62,18 @@ class Board extends React.Component {
           return row.map((space, x) => {
             const spaceX = spaceSize * x;
 
-            return space === 0 ? null : ( // The space is empty.
+            if (space === 0) {
+              // The space is empty.
+              return null;
+            }
+
+            return (
               <Piece
                 key={x}
+                centerX={spaceX + pieceRadius}
+                centerY={spaceY + pieceRadius}
                 player={space}
-                r={pieceRadius * 0.75}
-                cx={spaceX + pieceRadius}
-                cy={spaceY + pieceRadius}
+                radius={pieceRadius * 0.75}
               />
             );
           });
@@ -96,10 +101,10 @@ class Piece extends React.Component {
   render() {
     return (
       <circle
+        cx={this.props.centerX}
+        cy={this.props.centerY}
         fill={this.props.player === 1 ? "white" : "red"}
-        r={this.props.r}
-        cx={this.props.cx}
-        cy={this.props.cy}
+        r={this.props.radius}
       />
     );
   }
