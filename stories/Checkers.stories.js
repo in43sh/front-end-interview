@@ -52,16 +52,24 @@ class Board extends React.Component {
                 size={spaceSize}
                 x={spaceX}
                 y={spaceY}
-              >
-                {space === 0 ? null : ( // The space is empty.
-                  <Piece
-                    player={space}
-                    r={pieceRadius * 0.75}
-                    cx={spaceX + pieceRadius}
-                    cy={spaceY + pieceRadius}
-                  />
-                )}
-              </Space>
+              />
+            );
+          });
+        })}
+        {this.state.board.map((row, y) => {
+          const spaceY = spaceSize * y;
+
+          return row.map((space, x) => {
+            const spaceX = spaceSize * x;
+
+            return space === 0 ? null : ( // The space is empty.
+              <Piece
+                key={x}
+                player={space}
+                r={pieceRadius * 0.75}
+                cx={spaceX + pieceRadius}
+                cy={spaceY + pieceRadius}
+              />
             );
           });
         })}
@@ -73,16 +81,13 @@ class Board extends React.Component {
 class Space extends React.Component {
   render() {
     return (
-      <g>
-        <rect
-          fill={this.props.shade ? "green" : "lightgray"}
-          height={50}
-          width={50}
-          x={this.props.x}
-          y={this.props.y}
-        />
-        {this.props.children}
-      </g>
+      <rect
+        fill={this.props.shade ? "green" : "lightgray"}
+        height={50}
+        width={50}
+        x={this.props.x}
+        y={this.props.y}
+      />
     );
   }
 }
