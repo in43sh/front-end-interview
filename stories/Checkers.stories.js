@@ -83,8 +83,8 @@ class Space extends React.Component {
     return (
       <rect
         fill={this.props.shade ? "green" : "lightgray"}
-        height={50}
-        width={50}
+        height={this.props.size}
+        width={this.props.size}
         x={this.props.x}
         y={this.props.y}
       />
