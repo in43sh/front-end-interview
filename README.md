@@ -2,9 +2,13 @@
 
 Front-End Interview Exercises
 
-## Instructions
+## First, Do This
 
-Run `yarn start` to open the interview exercises in a new browser window.
+1. Make sure you have [Node.js](https://nodejs.org/en/) and [Yarn package manager](https://yarnpkg.com/lang/en/) installed on your computer.
+
+2. Run `yarn` to install all the dependencies.
+
+3. Run `yarn start` to open the interview exercises in a new browser window.
 
 ### Checkers
 
