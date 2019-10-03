@@ -14,7 +14,7 @@ Front-End Interview Exercises
 
 You are given a React app that renders a Checkers board.
 
-Implement these user requirements, to create a functional Checkers game.
+Modify the existing code by implementing these user requirements, to create a functional Checkers game. (The app's main React component is exported [here](https://github.com/Intelight/front-end-interview/blob/master/stories/Checkers.stories.js#L10).)
 
 1. Add the ability for a user to drag and drop a piece to any space on the board.
 
