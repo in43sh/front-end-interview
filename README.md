@@ -24,4 +24,4 @@ Modify [the existing code](https://github.com/Intelight/front-end-interview/blob
 
 The rules of Checkers are available [here](https://www.wikihow.com/Play-Checkers).
 
-![Screenshot](./screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/Intelight/front-end-interview/master/screenshot.png)
