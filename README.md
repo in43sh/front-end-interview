@@ -23,3 +23,5 @@ Modify [the existing code](https://github.com/Intelight/front-end-interview/blob
     1. If the next player can't make a move or has no more pieces, they lose.
 
 The rules of Checkers are available [here](https://www.wikihow.com/Play-Checkers).
+
+![Screenshot](./screenshot.png)
