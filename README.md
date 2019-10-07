@@ -5,19 +5,20 @@ Front-End Interview Exercises
 ## First, Do This
 
 1. Make sure you have [Node.js](https://nodejs.org/en/) and [Yarn package manager](https://yarnpkg.com/lang/en/) installed on your computer.
-
-2. Run `yarn` to install all the dependencies.
-
-3. Run `yarn start` to open the interview exercises in a new browser window.
+1. Run `yarn` to install all the dependencies.
+1. Run `yarn start` to open the interview exercises in a new browser window.
 
 ### Checkers
 
 You are given a React app that renders a Checkers board.
 
-Modify the existing code by implementing these user requirements, to create a functional Checkers game. (The app's main React component is exported [here](https://github.com/Intelight/front-end-interview/blob/master/stories/Checkers.stories.js#L10).)
+Modify [the existing code](https://github.com/Intelight/front-end-interview/blob/master/stories/Checkers.stories.js#L10) to create a functional Checkers game, by implementing these user requirements:
 
-1. Add the ability for a user to move a piece to any space on the board. (The "movement" interaction can be with simple mouse clicks, drag-n-drop if you're up for a challenge, or even the keyboard if you wish.)
+1. As a user, I want to move any piece to any space it is allowed to go, so that the board is correctly updated as a result of that move.
+    1. If a piece is captured, it is removed from the board.
+    1. If a piece reaches the opposite side, it becomes a king.
+1. As a user, I want to be able to take turns alternating between two local human players, so that Player One takes as many turns as possible and then Player Two does the same and so on until the game ends.
+    1. If a player is allowed to make multiple moves, they are allowed to do so before the other player moves again.
+    1. If the next player can't make a move or has no more pieces, they lose.
 
-2. Add the ability for a user to move a piece into _a valid space on the board_. (A "valid" space is one where a piece may be moved legally according to the rules of Checkers. See [here](https://www.wikihow.com/Play-Checkers) for reference.)
-
-3. Add the ability to end one player's turn and begin the other's or end the game.
+The rules of Checkers are available [here](https://www.wikihow.com/Play-Checkers).
