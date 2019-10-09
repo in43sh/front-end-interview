@@ -29,6 +29,8 @@ class Board extends React.Component {
     const spaceSize = this.props.size / 8;
     const pieceRadius = spaceSize / 2;
 
+    let piece = "piece";
+
     return (
       <svg
         height={this.props.size}
@@ -101,6 +103,7 @@ class Piece extends React.Component {
   render() {
     return (
       <circle
+        className="pointer"
         cx={this.props.centerX}
         cy={this.props.centerY}
         fill={this.props.player === 1 ? "white" : "red"}
