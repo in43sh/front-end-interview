@@ -2,6 +2,11 @@ import React from "react";
 
 class Space extends React.Component {
     render() {
+        const selectSquare = e => {
+            e.preventDefault();
+
+            //   console.log(this.props);
+        };
         return (
             <rect
                 fill={this.props.shade ? "green" : "lightgray"}
