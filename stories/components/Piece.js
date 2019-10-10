@@ -14,6 +14,7 @@ class Piece extends React.Component {
                 cy={this.props.centerY}
                 fill={this.props.player === 1 ? "white" : "red"}
                 r={this.props.radius}
+                onClick={selectPiece}
             />
         );
     }

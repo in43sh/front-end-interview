@@ -14,6 +14,7 @@ class Space extends React.Component {
                 width={this.props.size}
                 x={this.props.x}
                 y={this.props.y}
+                onClick={selectSquare}
             />
         );
     }
