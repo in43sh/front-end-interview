@@ -14,18 +14,44 @@ class Board extends React.Component {
             [2, 0, 2, 0, 2, 0, 2, 0],
             [0, 2, 0, 2, 0, 2, 0, 2],
             [2, 0, 2, 0, 2, 0, 2, 0]
-        ]
+        ],
+        coordinatesData: {
+            piece: { xPiece: 0, yPiece: 0 },
+            space: { x: 0, y: 0 }
+        }
     };
+
+    componentDidUpdate(prevProps) {
+        if (this.props.statePiece !== prevProps.statePiece) {
+            this.setState({
+                coordinatesData: {
+                    ...this.state.coordinatesData,
+                    piece: this.props.statePiece
+                }
+            });
+        }
+
+        if (this.props.stateSpace !== prevProps.stateSpace) {
+            this.setState({
+                coordinatesData: {
+                    ...this.state.coordinatesData,
+                    space: this.props.stateSpace
+                }
+            });
+        }
+    }
 
     render() {
         const spaceSize = this.props.size / 8;
         const pieceRadius = spaceSize / 2;
-        const state = this.props.state;
-        const setState = this.props.setState;
 
+        const setStatePiece = this.props.setStatePiece;
+        const setStateSpace = this.props.setStateSpace;
         //   console.log(this.state.board[0][0]);
 
-        console.log("Ololo-info", state);
+        // console.log("Current Piece", statePiece)
+        // console.log("Current Space", stateSpace)
+        console.log("Olol", this.state);
 
         return (
             <svg
@@ -50,6 +76,7 @@ class Board extends React.Component {
                                 size={spaceSize}
                                 x={spaceX}
                                 y={spaceY}
+                                setStateSpace={setStateSpace}
                             />
                         );
                     });
@@ -73,8 +100,7 @@ class Board extends React.Component {
                                 centerY={spaceY + pieceRadius}
                                 player={space}
                                 radius={pieceRadius * 0.75}
-                                state={state}
-                                setState={setState}
+                                setStatePiece={setStatePiece}
                             />
                         );
                     });

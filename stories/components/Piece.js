@@ -10,8 +10,12 @@ class Piece extends React.Component {
             } else if (this.props.player === 2) {
                 console.log("Red piece was chosen");
             }
+            //   console.log(this.props)
 
-            this.props.setState("testtest");
+            this.props.setStatePiece({
+                xPiece: this.props.centerX,
+                yPiece: this.props.centerY
+            });
         };
 
         return (

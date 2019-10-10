@@ -6,7 +6,9 @@ class Space extends React.Component {
             e.preventDefault();
 
             //   console.log(this.props);
+            this.props.setStateSpace({ x: this.props.x, y: this.props.y });
         };
+
         return (
             <rect
                 fill={this.props.shade ? "green" : "lightgray"}

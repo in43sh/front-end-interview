@@ -9,7 +9,16 @@ export default {
 
 // This is the main app:
 export const Checkers = () => {
-  const [state, setState] = useState("Ololo");
+  const [statePiece, setStatePiece] = useState({ xPiece: 0, yPiece: 0 });
+  const [stateSpace, setStateSpace] = useState({ x: 0, y: 0 });
 
-  return <Board size={400} state={state} setState={setState} />;
+  return (
+    <Board
+      size={400}
+      statePiece={statePiece}
+      setStatePiece={setStatePiece}
+      stateSpace={stateSpace}
+      setStateSpace={setStateSpace}
+    />
+  );
 };
