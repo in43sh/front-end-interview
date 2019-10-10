@@ -13,8 +13,8 @@ class Piece extends React.Component {
             //   console.log(this.props)
 
             this.props.setStatePiece({
-                xPiece: this.props.centerX,
-                yPiece: this.props.centerY
+                xPiece: this.props.centerX - 25,
+                yPiece: this.props.centerY - 25
             });
         };
 

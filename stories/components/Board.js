@@ -51,7 +51,7 @@ class Board extends React.Component {
 
         // console.log("Current Piece", statePiece)
         // console.log("Current Space", stateSpace)
-        console.log("Olol", this.state);
+        console.log("Position data", this.state);
 
         return (
             <svg
