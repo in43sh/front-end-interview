@@ -6,7 +6,7 @@ class Space extends React.Component {
             e.preventDefault();
 
             //   console.log(this.props);
-            this.props.setStateSpace({ x: this.props.x, y: this.props.y });
+            this.props.setStateSpace({ x: this.props.x / 50, y: this.props.y / 50 });
         };
 
         return (

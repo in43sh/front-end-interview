@@ -23,6 +23,23 @@ class Board extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.statePiece !== prevProps.statePiece) {
+            let oneBoard = this.state.board;
+            oneBoard[this.state.coordinatesData.piece.yPiece][
+                this.state.coordinatesData.piece.xPiece
+            ] = 2;
+            console.log(oneBoard);
+            this.setState({
+                board: oneBoard
+            });
+            console.log(
+                this.state.board[this.state.coordinatesData.piece.yPiece][
+                this.state.coordinatesData.piece.xPiece
+                ]
+            );
+            console.log(this.state.board);
+        }
+
+        if (this.props.statePiece !== prevProps.statePiece) {
             this.setState({
                 coordinatesData: {
                     ...this.state.coordinatesData,
@@ -47,7 +64,7 @@ class Board extends React.Component {
 
         const setStatePiece = this.props.setStatePiece;
         const setStateSpace = this.props.setStateSpace;
-        //   console.log(this.state.board[0][0]);
+        // console.log(this.state.board[this.state.coordinatesData.piece.yPiece][this.state.coordinatesData.piece.xPiece]);
 
         // console.log("Current Piece", statePiece)
         // console.log("Current Space", stateSpace)
