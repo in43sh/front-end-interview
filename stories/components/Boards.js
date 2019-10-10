@@ -1,5 +1,8 @@
 import React from "react";
 
+import Piece from "./Piece";
+import Space from "./Space";
+
 class Board extends React.Component {
     state = {
         board: [
@@ -17,6 +20,12 @@ class Board extends React.Component {
     render() {
         const spaceSize = this.props.size / 8;
         const pieceRadius = spaceSize / 2;
+        const state = this.props.state;
+        const setState = this.props.setState;
+
+        //   console.log(this.state.board[0][0]);
+
+        console.log("Ololo-info", state);
 
         return (
             <svg
@@ -45,6 +54,7 @@ class Board extends React.Component {
                         );
                     });
                 })}
+
                 {this.state.board.map((row, y) => {
                     const spaceY = spaceSize * y;
 
@@ -63,6 +73,8 @@ class Board extends React.Component {
                                 centerY={spaceY + pieceRadius}
                                 player={space}
                                 radius={pieceRadius * 0.75}
+                                state={state}
+                                setState={setState}
                             />
                         );
                     });

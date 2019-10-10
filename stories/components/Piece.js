@@ -2,14 +2,20 @@ import React from "react";
 
 class Piece extends React.Component {
     render() {
-        const selectSquare = e => {
+        const selectPiece = e => {
             e.preventDefault();
 
-            //   console.log(this.props);
+            if (this.props.player === 1) {
+                console.log("White piece was chosen");
+            } else if (this.props.player === 2) {
+                console.log("Red piece was chosen");
+            }
+
+            this.props.setState("testtest");
         };
+
         return (
             <circle
-                className="pointer"
                 cx={this.props.centerX}
                 cy={this.props.centerY}
                 fill={this.props.player === 1 ? "white" : "red"}

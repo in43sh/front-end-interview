@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import Board from "./components/Board";
 
 // This is used by Storybook:
 export default {
@@ -8,5 +9,7 @@ export default {
 
 // This is the main app:
 export const Checkers = () => {
-  return <Board size={400} />;
+  const [state, setState] = useState("Ololo");
+
+  return <Board size={400} state={state} setState={setState} />;
 };
