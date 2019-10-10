@@ -14,22 +14,23 @@ export const Checkers = () => {
 class Board extends React.Component {
   state = {
     board: [
-      [0, 1, 0, 1, 0, 1, 0, 1],
-      [1, 0, 1, 0, 1, 0, 1, 0],
-      [0, 1, 0, 1, 0, 1, 0, 1],
-      [0, 0, 0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0, 0, 0],
-      [2, 0, 2, 0, 2, 0, 2, 0],
-      [0, 2, 0, 2, 0, 2, 0, 2],
-      [2, 0, 2, 0, 2, 0, 2, 0]
-    ]
+      [-1, 1, -1, 1, -1, 1, -1, 1], // -1 = can't step
+      [1, -1, 1, -1, 1, -1, 1, -1], //  0 = can step
+      [-1, 1, -1, 1, -1, 1, -1, 1], //  1 = 1st player piece
+      [0, -1, 0, -1, 0, -1, 0, -1], //  2 = 2nd player piece
+      [-1, 0, -1, 0, -1, 0, -1, 0],
+      [2, -1, 2, -1, 2, -1, 2, -1],
+      [-1, 2, -1, 2, -1, 2, -1, 2],
+      [2, -1, 2, -1, 2, -1, 2, -1]
+    ],
+    user1: 1,
+    user2: 2,
+    turn: 1
   };
 
   render() {
     const spaceSize = this.props.size / 8;
     const pieceRadius = spaceSize / 2;
-
-    let piece = "piece";
 
     return (
       <svg
